@@ -6,7 +6,7 @@
 
 ## Install
 
-[MIT License](./INSTALL)
+[How to install and use theme](./INSTALL.md)
 
 ## License
 
