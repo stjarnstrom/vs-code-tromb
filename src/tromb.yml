@@ -1,23 +1,27 @@
 $schema: vscode://schemas/color-theme
-name: Dracula
-author: Zeno Rocha
+name: Tromb
+author: Robert Stjärnström
 maintainers:
-  - Derek P Sifford <dereksifford@gmail.com>
-semanticClass: theme.dracula
+  - Robert Stjärnström <robert.stjarnstrom@gmail.com>
+semanticClass: theme.tromb
 semanticHighlighting: true
-dracula:
+tromb:
   base:
-    - &BG        '#282A36'
-    - &FG        '#F8F8F2'
-    - &SELECTION '#44475A'
-    - &COMMENT   '#6272A4'
-    - &CYAN      '#8BE9FD'
-    - &GREEN     '#50FA7B'
-    - &ORANGE    '#FFB86C'
-    - &PINK      '#FF79C6'
+    - &BG        '#242424'
+    - &FG        '#F3F6FB'
+    - &SELECTION '#32393F'
+    - &COMMENT   '#888888'
+    - &CYAN      '#32C2D8'
+    - &GREEN     '#6BE13D'
+    - &ORANGE    '#BCED09'
+    - &PINK      '#E4B7E5'
     - &PURPLE    '#BD93F9'
-    - &RED       '#FF5555'
-    - &YELLOW    '#F1FA8C'
+    - &RED       '#BC3908'
+    - &YELLOW    '#F2AA00'
+    - &GUNMETAL  '#32393F'
+    - &MAGENTA   '#C61471'
+    - &PUMPKIN   '#F4721C'
+
   ansi:
     - &COLOR0        '#21222C'
     - &COLOR1        '#FF5555'
@@ -46,12 +50,15 @@ dracula:
     - &TAB_DROP_BG   '#44475A70'
     # UI Variants
     - &BGLighter     '#424450'
-    - &BGLight       '#343746' # HSV (230   , 25.71, 27.45)
-    - &BGDark        '#21222C' # HSV (234.55, 25   , 17.25)
-    - &BGDarker      '#191A21' # HSV (234.55, 25   , 13   )
+    - &BGLight       '#242424' # HSV (230   , 25.71, 27.45)
+    - &BGDark        '#242424' # HSV (234.55, 25   , 17.25)
+    - &BGDarker      '#191919' # HSV (234.55, 25   , 13   )
 
 # User Interface (more info: https://code.visualstudio.com/docs/getstarted/theme-color-reference)
 colors:
+  # UI textlinks
+  textLink.foreground: *CYAN
+  textLink.activeForeground: *YELLOW
 
   # Integrated Terminal Colors
   terminal.background: *BG
@@ -78,20 +85,20 @@ colors:
   contrastActiveBorder:                                                         # An extra border around active elements to separate them from others for greater contrast
 
   # Base Colors
-  focusBorder: *COMMENT                                                         # Overall border color for focused elements. This color is only used if not overridden by a component
+  focusBorder: *GUNMETAL                                                         # Overall border color for focused elements. This color is only used if not overridden by a component
   foreground: *FG                                                               # Overall foreground color. This color is only used if not overridden by a component
   widget.shadow:                                                                # Shadow color of widgets such as Find/Replace inside the editor
-  selection.background: *PURPLE                                                 # Background color of text selections in the workbench (for input fields or text areas, does not apply to selections within the editor and the terminal)
+  selection.background: *MAGENTA                                                 # Background color of text selections in the workbench (for input fields or text areas, does not apply to selections within the editor and the terminal)
   errorForeground: *RED                                                         # Overall foreground color for error messages (this color is only used if not overridden by a component)
 
   # Button Control
-  button.background: *SELECTION                                                 # Button background color
-  button.foreground: *FG                                                        # Button foreground color
+  button.background: *YELLOW                                                 # Button background color
+  button.foreground: *BG                                                        # Button foreground color
   button.border:                                                                # Button border color
   button.hoverBackground:                                                       # Button background color when hovering
   button.secondaryBackground: *BG                                               # Secondary button background color.
   button.secondaryForeground: *FG                                               # Secondary button foreground color.
-  button.secondaryHoverBackground: *BGLight                                     # Secondary button background color when hovering.
+  button.secondaryHoverBackground: *MAGENTA                                     # Secondary button background color when hovering.
 
 
   # Dropdown Control
@@ -126,7 +133,7 @@ colors:
   badge.background: *SELECTION                                                  # Badge background color
 
   # Progress Bar
-  progressBar.background: *PINK                                                 # Background color of the progress bar shown for long running operations
+  progressBar.background: *YELLOW                                                 # Background color of the progress bar shown for long running operations
 
   # List & Trees
   list.activeSelectionBackground: *SELECTION                                    # List/Tree background color for the selected item when the list/tree is active
@@ -143,24 +150,24 @@ colors:
   list.focusForeground:                                                         # List/Tree foreground color for the focused item when the list/tree is active. An active list/tree has keyboard focus, an inactive does not
 
   # Activity Bar
-  activityBar.background: *BGLight                                              # Activity Bar background color
+  activityBar.background: *GUNMETAL                                              # Activity Bar background color
   activityBar.inactiveForeground: *COMMENT                                      # Activity bar item foreground color when it is inactive
-  activityBar.dropBackground:                                                   # Drag and drop feedback color for the Activity Bar items
+  activityBar.dropBackground:                                                    # Drag and drop feedback color for the Activity Bar items
   activityBar.foreground: *FG                                                   # Activity bar foreground color (for example used for the icons)
-  activityBar.border:                                                           # Activity Bar border color with the Side Bar
-  activityBar.activeBorder: !alpha [*PINK, 80]                                  # Activity Bar indicator color
-  activityBar.activeBackground: !alpha [*PURPLE, 10]                            # Activity Bar indicator background color
-  activityBarBadge.background: *PINK                                            # Activity notification badge background color
+  activityBar.border: *BG                                                           # Activity Bar border color with the Side Bar
+  activityBar.activeBorder: !alpha [*BG, 80]                                  # Activity Bar indicator color
+  activityBar.activeBackground: !alpha [*FG, 10]                            # Activity Bar indicator background color
+  activityBarBadge.background: *PUMPKIN                                            # Activity notification badge background color
   activityBarBadge.foreground: *FG                                              # Activity notification badge foreground color
 
   # Side Bar
-  sideBar.background: *BGDark                                                   # Side Bar background color
+  sideBar.background: *GUNMETAL                                                   # Side Bar background color
   sideBar.foreground:                                                           # Side Bar foreground color. The Side Bar is the container for views like Explorer and Search
-  sideBar.border:                                                               # Side Bar border color on the side separating the editor
+  sideBar.border:                                                                # Side Bar border color on the side separating the editor
   sideBarTitle.foreground: *FG                                                  # Side Bar title foreground color
-  sideBarSectionHeader.background: *BG                                          # Side Bar section header background color
+  sideBarSectionHeader.background: *GUNMETAL                                          # Side Bar section header background color
   sideBarSectionHeader.foreground:                                              # Side Bar section header foreground color
-  sideBarSectionHeader.border: *BGDarker                                        # Side bar section header border color
+  sideBarSectionHeader.border: *BGDark                                        # Side bar section header border color
 
   # Editor Group & Tabs
   editorGroup.background:                                                       # Background color of an editor group. The background color shows up when dragging editor groups around
@@ -184,7 +191,7 @@ colors:
   editor.foreground: *FG
   editor.background: *BG
   editorLineNumber.foreground: *COMMENT
-  editorCursor.foreground:
+  editorCursor.foreground: *YELLOW
 
   editor.selectionBackground: *SELECTION                                        # Color of the editor selection
   editor.selectionHighlightBackground: *BGLighter                               # Color for regions with the same content as the selection
@@ -335,8 +342,8 @@ colors:
   statusBar.border:
 
   # Title Bar Colors (MacOS Only)
-  titleBar.activeBackground: *BGDark                                            # Title Bar background when the window is active
-  titleBar.activeForeground: *FG                                                # Title Bar foreground when the window is active
+  titleBar.activeBackground: *CYAN                                            # Title Bar background when the window is active
+  titleBar.activeForeground: *BG                                                # Title Bar foreground when the window is active
   titleBar.inactiveBackground: *BGDarker                                        # Title Bar background when the window is inactive
   titleBar.inactiveForeground: *COMMENT                                         # Title Bar foreground when the window is inactive
 
