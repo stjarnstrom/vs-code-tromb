@@ -1,10 +1,10 @@
 {
 	"name": "theme-tromb",
-	"version": "2.24.2",
-	"displayName": "Tromb Official",
+	"version": "1.0.0",
+	"displayName": "Tromb Branded Theme",
 	"homepage": "https://www.tromb.com/",
-	"description": "Official Tromb Theme. A dark theme for many editors, shells, and more.",
-	"publisher": "tromb-theme",
+	"description": "Official Tromb Theme for VS Code.",
+	"publisher": "Tromb",
 	"license": "MIT",
 	"scripts": {
 		"build": "node ./scripts/build.js",
@@ -27,7 +27,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/stjarnstrom/vs-code-tromb.git"
+		"url": "https://github.com/stjarnstrom/vs-code-tromb"
 	},
 	"bugs": {
 		"url": "https://github.com/stjarnstrom/vs-code-tromb/issues"
@@ -42,7 +42,8 @@
 		"tromb",
 		"dark",
 		"theme",
-		"color-theme"
+		"color-theme",
+		"tromb"
 	],
 	"icon": "icon.png",
 	"galleryBanner": {
